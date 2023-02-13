@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/8797b4aa7a.js"
+      crossorigin="anonymous"
+    ></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="header-title"><%= htmlWebpackPlugin.options.title%></h1>
+    </div>
+    <div class="container">
+      <div class="battery-bar-container">
+        <div class="battery-bar">
+          <div class="battery-juice"></div>
+        </div>
+      </div>
+      <div class="battery-info">
+        <div class="battery-status"></div>
+        <div class="battery-percentage"></div>
+        <div class="logo"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --red-battery-juice: linear-gradient(
+    45deg,
+    rgb(201, 0, 0),
+    rgb(232, 6, 6),
+    rgb(250, 33, 33)
+  );
+  --orange-battery-juice: linear-gradient(
+    45deg,
+    rgb(220, 59, 1),
+    rgb(234, 63, 1),
+    rgb(250, 79, 17)
+  );
+  --green-battery-juice: linear-gradient(
+    45deg,
+    rgb(0, 107, 0),
+    rgb(0, 160, 0),
+    rgb(1, 201, 1)
+  );
+  --yellow-battery-juice: linear-gradient(
+    45deg,
+    rgb(220, 220, 0),
+    rgb(219, 219, 2),
+    rgb(255, 255, 18)
+  );
+  --main-background-color: rgb(34, 217, 34);
+  --battery-level: 0%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #252525;
+}
+
+h1 {
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--main-background-color);
+  color: #252525;
+  height: 100px;
+}
+
+.container {
+  display: flex;
+  width: 50%;
+  height: 400px;
+  background-color: #000;
+  margin: 20px auto;
+  padding: 20px;
+  color: var(--main-background-color);
+  border-radius: 6px;
+}
+
+.battery-bar-container {
+  width: 50%;
+}
+
+.battery-bar {
+  height: 100%;
+  width: 45%;
+  border-radius: 100px;
+  padding: 1px;
+  background-color: transparent;
+  border: solid 1px rgb(255, 255, 255, 0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.battery-juice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--red-battery-juice);
+  animation: level-change 1000ms ease-in-out forwards;
+}
+
+.battery-info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  gap: 10px;
+}
+
+.battery-percentage {
+  font-size: 34px;
+}
+
+@keyframes level-change {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: var(--battery-level);
+  }
+}
