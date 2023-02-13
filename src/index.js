@@ -51,25 +51,37 @@ function updateBatteryInfo(battery) {
   if (battery.charging) {
     batteryStatus.innerText = 'Charging'
     logo.innerHTML = `<i class="fa-solid fa-charging-station"></i>`
+    logo.classList.remove('animated-red')
+    logo.classList.add('animated-green')
   } else if (batteryLevel > 0 && batteryLevel <= 20) {
     batteryStatus.innerText = 'Battery low, time to charge'
     logo.innerHTML = `<i class="fa-solid fa-battery-quarter"></i>`
     logo.style.color = redBatteryJuice
+    logo.classList.remove('animated-green')
+    logo.classList.add('animated-red')
   } else if (batteryLevel > 20 && batteryLevel <= 50) {
     batteryStatus.innerText = 'Not Charging'
     logo.innerHTML = `<i class="fa-solid fa-battery-half"></i>`
     logo.style.color = orangeBatteryJuice
+    logo.classList.remove('animated-green')
+    logo.classList.remove('animated-red')
   } else if (batteryLevel > 50 && batteryLevel <= 80) {
     batteryStatus.innerText = 'Not Charging'
     logo.innerHTML = `<i class="fa-solid fa-battery-three-quarters"></i>`
     logo.style.color = yellowBatteryJuice
+    logo.classList.remove('animated-green')
+    logo.classList.remove('animated-red')
   } else if (batteryLevel > 80 && batteryLevel < 100) {
     batteryStatus.innerText = 'Almost full'
     logo.innerHTML = `<i class="fa-solid fa-battery-three-quarters"></i>`
     logo.style.color = greenBatteryJuice
+    logo.classList.remove('animated-green')
+    logo.classList.remove('animated-red')
   } else {
     batteryStatus.innerText = 'Full'
     logo.innerHTML = `<i class="fa-solid fa-battery-full"></i>`
     logo.style.color = greenBatteryJuice
+    logo.classList.remove('animated-green')
+    logo.classList.remove('animated-red')
   }
 }
